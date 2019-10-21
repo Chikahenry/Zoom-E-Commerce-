@@ -1,0 +1,33 @@
+﻿
+<h2>
+
+    @ViewBag.OrderedMessage
+
+</h2>
+
+<br />
+<h3>Make payment and get your bike in a flash</h3>
+<br />
+      <form asp-action="Pay" asp-controller="Payment" class="col-md-5">
+          <div class="form-group ">
+              <label>Card Name</label>
+              <input type="text" class="form-control" placeholder="Card Name">
+          </div>
+          <div class="form-group">
+              <label>Card Pin</label>
+              <input type="number" class="form-control" placeholder="Card Pin">
+          </div>
+          <div class="form-group float-left">
+              <label>Expiring date</label>
+              <input type="date" class="form-control col-md-12" >
+          </div>
+          <div class="form-group float-right">
+              <label>CVV</label>
+              <input type="number" class="form-control col-md-7 " placeholder="CVV">
+          </div>
+          <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input">
+              <label class="form-check-label" >Add card to account</label>
+          </div>
+          <a asp-action="Pay" asp-controller="Payment" type="submit" class="btn btn-primary">Submit Payment</a>
+      </form>

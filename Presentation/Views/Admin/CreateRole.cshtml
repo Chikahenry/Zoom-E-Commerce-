@@ -1,0 +1,15 @@
+﻿@model Presentation.ViewModels.RoleVM
+
+
+<form class="" method="post" asp-action="CreateRole" asp-controller="Admin">
+
+    <div class="form-group">
+        <label asp-for="RoleName" class="control-label mt-2"></label>
+        <div class="col-md-9">
+            <input asp-for="RoleName" class="form-control" />
+            <span asp-validation-for="RoleName" class="text-danger"></span>
+        </div>
+    </div> 
+
+    <button type="submit" class="btn btn-primary" style="width:auto; ">Create Role</button>
+</form>

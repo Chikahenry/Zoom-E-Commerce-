@@ -1,0 +1,85 @@
+﻿@model Presentation.ViewModels.BikeCreateVM
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="card">
+
+            <ul>
+                <li class="nav-item">
+                    <h4 class="mt-4">Hello</h4>
+                </li>
+                <li class="text-black list"><a asp-controller="Bikes" asp-action="Create">Add Product</a></li>
+                <hr />
+                <li>
+                    <a asp-action="Index" asp-controller="Bikes">Bike List</a>
+                </li><hr />
+                <li><a href="#">My Products</a></li>
+                <hr />
+                <li><a href="#">Track Order</a></li>
+                <hr />
+                <li><a href="#">Change location</a></li>
+                <hr />
+                <li><a href="#">Change card</a></li>
+                <hr />
+                <li><a href="#">More Products</a></li>
+                <hr />
+            </ul>
+        </div>
+
+
+    </div>
+
+    <div class="col-md-5 offset-3">
+        <h3>Add Product</h3>
+        <form asp-action="Create" asp-controller="Bikes" enctype="multipart/form-data" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="custom-file">
+                <label>Photo</label>
+                <input asp-for="ImageTB" class="form-control custom-file-input" />
+                <label asp-for="ImageTB" type="file" class="control-label custom-file-label">Choose File...</label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Stock" /> @Html.DisplayNameFor(model => model.Stock)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryID" class="control-label"></label>
+                <select asp-for="CategoryID" class="form-control" asp-items="ViewBag.CategoryID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add Product" class="btn btn-primary" />
+            </div>
+        </form>
+       
+    </div>
+
+</div>
+
+
+@section Scripts {
+    <script>
+    $(document).ready(function () {
+        $('.custom-file-input').on("change", function () {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).next('.custom-file-label').html(fileName);
+        });
+    })
+    </script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

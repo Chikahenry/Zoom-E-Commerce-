@@ -1,0 +1,21 @@
+﻿@using Presentation.ViewModels
+@model BikeLIstVM
+
+<h3>All list of Bikes</h3>
+<br />
+
+<h2>@Model.CurrentCategory</h2>
+
+<div class="row">
+
+
+@{
+    foreach (var bike in Model.Bikes)
+    {
+       
+               @await Html.PartialAsync("Bikes", bike)
+
+    }
+
+}
+</div>

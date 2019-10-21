@@ -1,0 +1,76 @@
+﻿@model Presentation.Data.Models.Buyer
+
+    <h3 class="text-left">Place your orders for our finest bikes.</h3>
+    <h4>Please provide details of your preferred delivery address</h4>
+    <br />
+<div class="row mt-5">
+    <form asp-action="Order" asp-controller="Buyer" method="post" class="card pl-5 col-md-8 form-horizontal" role="form">
+        <div class="form-group">
+            <label asp-for="LastName" class="control-label mt-2"></label>
+            <div class="col-md-9">
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FirstName" class="control-label"></label>
+            <div class="col-md-9 ">
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Address" class="control-label"></label>
+            <div class="col-md-9 ">
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="State" class="control-label"></label>
+            <div class="col-md-9 ">
+                <input asp-for="State" class="form-control" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Country" class="control-label"></label>
+            <div class="col-md-9 ">
+                <input asp-for="Country" class="form-control" />
+                <span asp-validation-for="Country" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="PhoneNumber" class="control-label"></label>
+            <div class="col-md-9 ">
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email" class="control-label"></label>
+            <div class="col-md-9 ">
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger" ></span>
+            </div>
+        </div><br />
+        <div class="form-group">
+            <div class="btn-group col-md-offset-2 col-md-3">
+                <a asp-action="Ordered" asp-controller="Buyer" class="btn btn-primary" type="submit">Submit Order</a>
+            </div>
+        </div>
+
+    </form>
+
+    <div class="col-md-4">
+        <img class="mb-4 mt-4" src="~/Images/bik18.jpg"  /><br />
+        <img class="mb-4" src="~/Images/bik8.jpg" /><br />
+        <img class="" src="~/Images/bik19.jpg" />
+
+    </div>
+</div>

@@ -1,0 +1,57 @@
+﻿@model Presentation.ViewModels.OrderVM
+
+<div class=" orderForm">
+    <h2>Your Orders</h2><br />
+    <div>
+
+    <h4>Here are the bikes in your cart.</h4>
+    </div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Quantity</th>
+                <th>Bike Name</th>
+                <th class="text-right">Price</th>
+                <th class="text-right">Subtotal</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var line in Model.Order.OrderItems)
+            {
+                <tr>
+                    <td class="text-center">@line.Amount</td>
+                    <td class="text-left">@line.Bike.Name</td>
+                    <td class="text-right">@line.Bike.Price.ToString("c")</td>
+                    <td class="text-right">
+                        @((line.Amount * line.Bike.Price).ToString("c"))
+                    </td>
+                    <td class="text-center"><a class="text-white remove btn btn-danger" asp-controller="Order" asp-action="DeleteOrder" asp-route-bikeID="@line.Bike.BikeID">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-right">Total:</td>
+                <td class="text-right">
+                    @Model.TotalOrder.ToString()
+                </td>
+            </tr>
+        </tfoot>
+    </table><br />
+
+    <div class="text-right">
+        <div class="btn-group ">
+            <a class="btn btn-success" asp-controller="Buyer" asp-action="Order">Order</a>
+            <a class="btn-group">
+                <a class="btn btn-primary text-white dropdown-toggle" data-toggle="dropdown">
+                    Add more bikes<span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a asp-controller="Bike" asp-action="Index" asp-route-category="Power">Power</a></li>
+                    <li><a asp-controller="Bike" asp-action="Index" asp-route-category="Non-Power">Non Power</a></li>
+                </ul>
+            </a>
+        </div>
+    </div>
+</div><br /><br /><br /><br /><br />

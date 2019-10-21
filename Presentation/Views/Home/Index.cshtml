@@ -1,0 +1,21 @@
+﻿@model Presentation.ViewModels.HomeVM
+
+
+<div>
+    <video width="100%" height="540" controls>
+        <source src="~/Videos/ZoomVideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div><br />
+
+<div>
+    <h2>Select from our Latest collection</h2>
+    <h4>Get the best for you and your kids</h4>
+</div><br />
+
+<div class="row">
+    @foreach (var bike in Model.Bikes)
+    {
+        @await Html.PartialAsync("Bikes", bike)
+    }
+</div>

@@ -1,0 +1,22 @@
+﻿
+@{ 
+    ViewData["Title"] = "Category Dropdown";
+}
+
+<li class="dropdown">
+    <a asp-controller="Bike" asp-action="Index" class="dropdown-toggle mt-3 text-white"
+       data-toggle="dropdown">Bikes<b class="caret"></b></a>
+    <ul class="dropdown-menu pl-2">
+        @foreach (var category in Model)
+        {
+            <li>
+                <a asp-controller="Bike" asp-action="Index" class="text-dark"
+                   asp-route-category="@category.Name">@category.Name</a>
+            </li>
+        }
+        <li class="divider"><hr /></li>
+        <li>
+            <a asp-controller="Bike" asp-action="Index" asp-route-category="">View all bikes</a>
+        </li>
+    </ul>
+</li>

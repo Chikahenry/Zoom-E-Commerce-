@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Presentation.Data.Models.Bike>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Bikes in Stock</h2>
+
+<p>
+    <a class="btn btn-secondary" asp-action="Create">Create New</a>
+</p>
+
+<form asp-controller="Movies" asp-action="Index" method="get" class="row">
+    <p class="col-md-4 ">
+        <input type="text" name="SearchString" class="form-control float-left col-sm-9">
+        <button type="submit" value="Filter" class="btn btn-secondary float-right" >Search</button>
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th class="m-0">
+                @Html.DisplayNameFor(model => model.ImageTB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stock)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td class="mr-lg-0">
+                @Html.DisplayFor(modelItem => item.ImageTB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stock)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryID)
+            </td>
+            <td>
+                <a class="btn-sm btn-success" asp-action="Edit" asp-route-id="@item.BikeID">Edit</a> 
+                <a class="btn-sm btn-primary" asp-action="Details" asp-route-id="@item.BikeID">Details</a> 
+                <a class="btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.BikeID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

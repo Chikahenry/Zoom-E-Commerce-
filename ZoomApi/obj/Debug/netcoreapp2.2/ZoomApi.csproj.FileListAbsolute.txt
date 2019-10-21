@@ -1,0 +1,14 @@
+C:\Users\user\source\repos\Zoom\ZoomApi\bin\Debug\netcoreapp2.2\ZoomApi.deps.json
+C:\Users\user\source\repos\Zoom\ZoomApi\bin\Debug\netcoreapp2.2\ZoomApi.runtimeconfig.json
+C:\Users\user\source\repos\Zoom\ZoomApi\bin\Debug\netcoreapp2.2\ZoomApi.runtimeconfig.dev.json
+C:\Users\user\source\repos\Zoom\ZoomApi\bin\Debug\netcoreapp2.2\ZoomApi.dll
+C:\Users\user\source\repos\Zoom\ZoomApi\bin\Debug\netcoreapp2.2\ZoomApi.pdb
+C:\Users\user\source\repos\Zoom\ZoomApi\obj\Debug\netcoreapp2.2\ZoomApi.csprojAssemblyReference.cache
+C:\Users\user\source\repos\Zoom\ZoomApi\obj\Debug\netcoreapp2.2\ZoomApi.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\Zoom\ZoomApi\obj\Debug\netcoreapp2.2\ZoomApi.RazorAssemblyInfo.cache
+C:\Users\user\source\repos\Zoom\ZoomApi\obj\Debug\netcoreapp2.2\ZoomApi.RazorAssemblyInfo.cs
+C:\Users\user\source\repos\Zoom\ZoomApi\obj\Debug\netcoreapp2.2\ZoomApi.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\Zoom\ZoomApi\obj\Debug\netcoreapp2.2\ZoomApi.AssemblyInfo.cs
+C:\Users\user\source\repos\Zoom\ZoomApi\obj\Debug\netcoreapp2.2\ZoomApi.RazorTargetAssemblyInfo.cache
+C:\Users\user\source\repos\Zoom\ZoomApi\obj\Debug\netcoreapp2.2\ZoomApi.dll
+C:\Users\user\source\repos\Zoom\ZoomApi\obj\Debug\netcoreapp2.2\ZoomApi.pdb
